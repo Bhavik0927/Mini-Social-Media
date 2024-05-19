@@ -1,23 +1,23 @@
 import mongoose, { mongo } from "mongoose";
 
 const postSchema = mongoose.Schema({
-    
+
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "user" 
+        ref: "user"
     },
-    date:{
-        type:Date,
+    date: {
+        type: Date,
         default: Date.now
     },
-    content:String,
-    likes:[
-        {type:mongoose.Schema.Types.ObjectId,
-            ref:"user"
+    content: String,
+    likes: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "user"
         }
 
     ]
 })
 
-export const Post = mongoose.model("post",postSchema);
-    
+export const Post = mongoose.model("post", postSchema);
